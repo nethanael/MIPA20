@@ -1,0 +1,30 @@
+			.my_cont {
+				border: 0px solid green;
+			}
+
+			.my_row {
+				border: 0px solid red;
+			}
+
+			.my_col {
+				border: 0px solid #1512de;
+			}
+
+			.my_td {
+				border: 0px solid rgb(100, 25, 25);
+				text-align: center;
+				vertical-align: middle;
+			}
+
+			.my_table {
+				border: 1px solid rgb(121, 121, 121);
+				padding-top: 50px;
+				padding-right: 30px;
+				padding-bottom: 50px;
+				padding-left: 20px;
+			}
+
+			.my_scrollable_div {
+				overflow: scroll;
+				height: 450px;
+			}
