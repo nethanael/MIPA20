@@ -33,7 +33,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimun-scale=1.0">
 		<link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/test_borders.css">
-		<title>Sistema MIPA 2.0</title>
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- DataTables CSS -->
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+        <!-- DataTables JS -->
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+        <title>Sistema MIPA 2.0</title>
 	</head>
 <body>
 	<div class = "container my_cont">
@@ -42,23 +50,26 @@
 	<?php include 'includes/navBar.php'; ?>
           
 		<div class = "row justify-content-center my_row">
-			<div class = "table-responsive my_scrollable_div">
+
+		<div class = "row justify-content-center my_row">
+			<div class = "col-12 my_col">
+					<!--(row_!Titulo!)-->
+					<p class="text-center">Lista General de empleados:</p>
+			</div>
+		</div>
+
+			<div class = "table-responsive">
 				<!-- (row_!Centro!) -->
-                <table class="table table-sm table-striped table-hover">
-                    <thead class="thead-dark">
+                <table id="myTable" class="table" style="width:100%">
+                    <thead class="thead-dark">    
                         <tr>
-                            <th class="my_td" colspan="10">Lista completa de empleados:</th>
-                        </tr>
-                        <tr>
-                            <td colspan="10"><small>Haga cl&iacuteck en la cedula para ver en detalle.</small></td>
+                            <th><small>C&eacutedula:</small></th>
+                            <th><small>Nombre:</small></th>
+                            <th><small>Usuario:</small></th>
+                            <th><small>Puesto:</small></th>
                         </tr>
                     </thead>
-                    <tr>
-                        <th><small>C&eacutedula:</small></th>
-                        <th><small>Nombre:</small></th>
-                        <th><small>Usuario:</small></th>
-                        <th><small>Puesto:</small></th>
-                    </tr>
+                    <tbody>
                         <?php                                                   //saca todos los valores de la base de datos y
                                                                                 // los hace filas
                             while ($line =  $result->fetch_assoc()) 
@@ -75,11 +86,14 @@
                                     }
                                     echo "</tr>";
                                 }
-                        ?>     
+                        ?> 
+                    </tbody>    
                 </table>
             </div>
+        <button class="btn btn-warning" onclick="exportTableToExcel('myTable', 'Empleados_MIPA')">Exportar a Excel</button><br>
         <a class="btn btn-info" href="index.php">Volver</a>
 		</div>
+
 
         <?php 
              mysqli_free_result($result);
@@ -87,5 +101,23 @@
         ?>
 
 	</div>
+    <script>
+
+        $('#myTable').DataTable({
+            paging: true,
+            searching: true,
+            ordering:false,
+            pageLength: 10, // Número de registros por página
+            language: {
+                url: 'https://cdn.datatables.net/plug-ins/1.13.6/i18n/Spanish.json' // Para traducir al español
+            }
+        });
+
+        $(document).ready(function() {
+            $('#myTable').DataTable();
+        });
+
+    </script>
+    <script src="scripts/export_report_excel.js"></script> 
 </body>
 </html>
