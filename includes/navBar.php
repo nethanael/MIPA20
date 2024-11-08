@@ -1,8 +1,8 @@
 <div class = "row justify-content-center my_row">
     
             <!-- (row_!nav!) -->
-        <nav class="navbar navbar-expand-sm  navbar-light">
-            <a class="navbar-brand" href="#">InfoAPP</a>
+        <nav class="navbar navbar-expand-sm navbar-light">
+            <a class="navbar-brand" href="#">MIPA</a>
 
             <div class="" id="navbarNav">
                 <ul class="navbar-nav">

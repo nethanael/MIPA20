@@ -35,11 +35,11 @@
         <link rel="stylesheet" href="css/test_borders.css">
 
         <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="includes/jquery-3.7.1.min.js"></script>
         <!-- DataTables CSS -->
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="css/jquery.dataTables.min.css">
         <!-- DataTables JS -->
-        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+        <script src="includes/jquery.dataTables.min.js"></script>
 
         <title>Sistema MIPA 2.0</title>
 	</head>
@@ -54,13 +54,13 @@
 		<div class = "row justify-content-center my_row">
 			<div class = "col-12 my_col">
 					<!--(row_!Titulo!)-->
-					<p class="text-center">Lista General de empleados:</p>
+					<p class="text-center">Lista General de empleados SFI:</p>
 			</div>
 		</div>
 
 			<div class = "table-responsive">
 				<!-- (row_!Centro!) -->
-                <table id="myTable" class="table" style="width:100%">
+                <table id="myTable" class="table table-borderless table-hover" style="width:100%">
                     <thead class="thead-dark">    
                         <tr>
                             <th><small>C&eacutedula:</small></th>
@@ -107,7 +107,7 @@
             paging: true,
             searching: true,
             ordering:false,
-            pageLength: 10, // Número de registros por página
+            pageLength: 20, // Número de registros por página
             language: {
                 url: 'https://cdn.datatables.net/plug-ins/1.13.6/i18n/Spanish.json' // Para traducir al español
             }
