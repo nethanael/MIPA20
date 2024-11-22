@@ -51,7 +51,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimun-scale=1.0">
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/test_borders.css">
-		<title>Sistema de Informes</title>
+		<title>Sistema MIPA 2.0</title>
 	</head>
 <body>
 	<div class = "container my_cont">

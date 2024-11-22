@@ -18,11 +18,14 @@
     $dept_code=$_SESSION['DEPT_CODE'];
     include 'includes/functions.php';
 
-    $table="empleados";
-    $fields="cedula, nombre_completo, usuarioRed, puesto";
-    $whereClause="activo like 1";
+    $table1="subprocesos";
+    $table2="empleados";
+    $fields="cedula_coordinador, nombre_completo, nivel, nombre, cg";
+    $ONclause1="subprocesos.cedula_coordinador=empleados.cedula";
+    $whereClause="1=1";
 
-    $result = db_select_simple($table, $fields, $whereClause);
+
+    $result = db_select_1_inner_query($table1, $table2, $fields, $ONclause1, $whereClause);
 
 ?>
 
@@ -54,7 +57,7 @@
 		<div class = "row justify-content-center my_row">
 			<div class = "col-12 my_col">
 					<!--(row_!Titulo!)-->
-					<p class="text-center">Lista General de empleados SFI:</p>
+					<p class="text-center">Subprocesos y Coordinadores SFI:</p>
 			</div>
 		</div>
 
@@ -64,9 +67,10 @@
                     <thead class="thead-dark">    
                         <tr>
                             <th><small>C&eacutedula:</small></th>
-                            <th><small>Nombre:</small></th>
-                            <th><small>Usuario:</small></th>
-                            <th><small>Puesto:</small></th>
+                            <th><small>Coordinador:</small></th>
+                            <th><small>Nivel:</small></th>
+                            <th><small>Area:</small></th>
+                            <th><small>Centro Gesti&oacuten:</small></th>
                         </tr>
                     </thead>
                     <tbody>

@@ -51,8 +51,13 @@
 						</tr>
 						
 						<tr>
-						<td class="my_td"><a class="btn btn-light btn-block" href="all_system_employees.php">Consulta General</a></td>
-							<td><p class="my_td"><a class="btn btn-light btn-block" href=#>Disponible</a></p></td>
+						<td class="my_td"><a class="btn btn-light btn-block" href="all_system_employees.php">Colaboradores</a></td>
+							<td><p class="my_td"><a class="btn btn-light btn-block" href="supervisors_departments.php">Subprocesos - Coordinadores</a></p></td>
+						</tr>
+						
+						<tr>
+						<td class="my_td"><a class="btn btn-light btn-block" href=#>Centros de Costo - Ordenes Estad&iacutesticas</a></td>
+							<td><p class="my_td"><a class="btn btn-light btn-block" href=#>Tarjetas - Fondos de Trabajo</a></p></td>
 						</tr>
 
 					</table>
