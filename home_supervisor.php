@@ -57,7 +57,7 @@
 						
 						<tr>
 						<td class="my_td"><a class="btn btn-light btn-block" href=#>Centros de Costo - Ordenes Estad&iacutesticas</a></td>
-							<td><p class="my_td"><a class="btn btn-light btn-block" href=#>Tarjetas - Fondos de Trabajo</a></p></td>
+							<td><p class="my_td"><a class="btn btn-light btn-block" href="cards_funds.php">Tarjetas - Fondos de Trabajo</a></p></td>
 						</tr>
 
 					</table>

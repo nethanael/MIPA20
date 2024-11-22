@@ -18,10 +18,10 @@
     $dept_code=$_SESSION['DEPT_CODE'];
     include 'includes/functions.php';
 
-    $table1="subprocesos";
-    $table2="empleados";
-    $fields="cedula_coordinador, nombre_completo, nivel, nombre, cg";
-    $ONclause1="subprocesos.cedula_coordinador=empleados.cedula";
+    $table1="empleados";
+    $table2="fondo_tarjetas";
+    $fields="fondo_tarjetas.cedula, nombre_completo, tarjeta, fondo";
+    $ONclause1="fondo_tarjetas.cedula=empleados.cedula";
     $whereClause="activo like 1";
 
 
@@ -67,10 +67,9 @@
                     <thead class="thead-dark">    
                         <tr>
                             <th><small>C&eacutedula:</small></th>
-                            <th><small>Coordinador:</small></th>
-                            <th><small>Nivel:</small></th>
-                            <th><small>Area:</small></th>
-                            <th><small>Centro Gesti&oacuten:</small></th>
+                            <th><small>Nombre:</small></th>
+                            <th><small># Tarjeta:</small></th>
+                            <th><small>Fondo:</small></th>
                         </tr>
                     </thead>
                     <tbody>
