@@ -60,6 +60,22 @@
 							<td><p class="my_td"><a class="btn btn-light btn-block" href="cards_funds.php">Tarjetas - Fondos de Trabajo</a></p></td>
 						</tr>
 
+						<tr>
+							<td colspan=2 >
+								<p class="my_td h5">Sincronias con RH (OracleDB)</p>
+							</td>
+						</tr>
+
+						<tr>
+						<td class="my_td"><a class="btn btn-light btn-block" href="all_ORACLE_system_employees.php">Colaboradores (RH)</a></td>
+						<td><p class="my_td"><a class="btn btn-light btn-block" href=#>*</a></p></td>
+						</tr>
+
+						<tr>
+						<td class="my_td"><a class="btn btn-light btn-block" href="oracle_sync_new_employees.php">Sincronizar Nuevos Empleados</a></td>
+						<td><p class="my_td"><a class="btn btn-light btn-block" href="oracle_sync_jobs.php">Sincronizar Puestos</a></p></td>
+						</tr>
+
 					</table>
 			</div>
 		</div>

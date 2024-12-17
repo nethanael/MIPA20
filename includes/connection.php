@@ -12,7 +12,7 @@
 			//echo "Connection failed!";
 	}
 		else{
-			//echo "Connected successfully";
+			//echo "Connected to MYSQL successfully";
 		}
 
 ?>

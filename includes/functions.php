@@ -256,5 +256,37 @@ function yearFix($month)
         echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
     }
 
+    /* ORACLE FUNCTIONS */
+
+         // simple select query with where clause (Use to iterate and build tables)
+
+    function oracle_db_select_simple($table1, $fields, $whereClause){
+        include 'oracle_connection.php';
+        
+        $query = "SELECT ".$fields." FROM ".$table1." WHERE ".$whereClause;
+        //echo $query;
+        $stmt = oci_parse($oracleConn, $query);
+        oci_execute($stmt);
+                
+        return $stmt;        //query to db
+    };
+
+        // Building an array for data transfer between BD´s ORACLE -> MySQL
+
+    function oracle_db_build($data){
+    
+      // array build for data update between DB´s
+        $oracle_data = [];
+            while ($row = oci_fetch_assoc($data)) {
+            $oracle_data[] = $row; // save results on array
+        }
+    
+        oci_free_statement($oracle_stmt);
+        return $oracle_data;
+
+    };
+
+
+
 ?>
 
