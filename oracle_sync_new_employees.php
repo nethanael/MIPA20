@@ -10,8 +10,8 @@
     if ($_SESSION['LOGIN_MIPA'] == FALSE ){header("Location: index.php");}
     else
        {
-        if ($_SESSION['ROLE_NAME'] == "administrator") header("Location: home_admin.php");
-        //if ($_SESSION['ROLE_NAME'] == "supervisor") header("Location: home_supervisor.php");
+        //if ($_SESSION['ROLE_NAME'] == "administrator") header("Location: home_admin.php");
+        if ($_SESSION['ROLE_NAME'] == "supervisor") header("Location: home_supervisor.php");
         if ($_SESSION['ROLE_NAME'] == "employee") header("Location: home_employee.php");
         }
 
@@ -64,17 +64,16 @@
                 <tbody>
                     <?php
 
-                                // Incluir archivos de conexión
-                        include 'includes/connection.php';        // Retorna $conn para MySQL
-                        include 'includes/oracle_connection.php'; // Retorna $oracleConn para Oracle
+                        include 'includes/connection.php';        // Returns $conn ->  MySQL
+                        include 'includes/oracle_connection.php'; // Returns $oracleConn -> Oracle
 
-                        // 1. Consulta en Oracle para obtener empleados
+                        // check Oracle users
                         $queryOracle = "SELECT cedula, nombrecompleto, email, fec_nacim,cf,nombrecf,puesto FROM rhusrprd.rs_empleados WHERE cf IN (9189)";
                         $stmtOracle = oci_parse($oracleConn, $queryOracle);
                         oci_execute($stmtOracle);
 
                                 
-                        // 3. Procesar los registros obtenidos de Oracle
+                        // Process Oracle records
                         while ($row = oci_fetch_assoc($stmtOracle)) {
                             $cedula = (string)$row['CEDULA'];
                             $nombre_completo = (string)$row['NOMBRECOMPLETO'];
@@ -83,6 +82,9 @@
                             $cg = $row['CF'];
                             $nombre_cg = (string)$row['NOMBRECF'];
                             $puesto = (string)$row['PUESTO'];
+                            $id = '231';    //proceso default para nuevos ingresos al departamento
+                            $idJefeN = '231'; // Jefe Default para nuevos ingresos al departamento
+                            $activo = '1';
 
                             $query = "SELECT COUNT(*) AS total FROM empleados WHERE cedula = '$cedula'";
                             $result = mysqli_query($conn, $query);
@@ -90,8 +92,8 @@
                             $count = $row['total']; // Extrae el valor de COUNT(*)
 
                             if ($count == 0) {
-                                // Insertar si la cédula no existe
-                                $query2 = "INSERT INTO empleados (cedula, nombre_completo, nombre_cg, email, fecha_nacim, puesto, cg) VALUES ('$cedula', '$nombre_completo', '$nombre_cg', '$email', '$fecha_nacim', '$puesto', '$cg')";
+                                // inserts new user if doesnt exist
+                                $query2 = "INSERT INTO empleados (cedula, nombre_completo, nombre_cg, email, fecha_nacim, puesto, cg, id, idJefeN, activo) VALUES ('$cedula', '$nombre_completo', '$nombre_cg', '$email', '$fecha_nacim', '$puesto', '$cg', '$id', '$idJefeN', '$activo')";
                                 //echo $query2;
                                 mysqli_query($conn, $query2);    
                                 echo "<tr>";
@@ -101,15 +103,13 @@
                                 echo "</tr>";
                             }
                         }
-
                         echo "<tr>";
                         echo "<td>"."Importación de usuarios completada."."</td>";
                         echo "</tr>";
-                        // 4. Cerrar recursos
+                        // Close resources
                         oci_free_statement($stmtOracle);
                         $conn->close();
                         oci_close($oracleConn);
-
                     ?>
                 </tbody>    
             </table>

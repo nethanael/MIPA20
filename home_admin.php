@@ -11,8 +11,8 @@
 	if ($_SESSION['LOGIN_MIPA'] == FALSE ){header("Location: index.php");}
     else
        {
-        if ($_SESSION['ROLE_NAME'] == "administrator") header("Location: home_admin.php");
-        //if ($_SESSION['ROLE_NAME'] == "supervisor") header("Location: home_supervisor.php");
+        //if ($_SESSION['ROLE_NAME'] == "administrator") header("Location: home_admin.php");
+        if ($_SESSION['ROLE_NAME'] == "supervisor") header("Location: home_supervisor.php");
         if ($_SESSION['ROLE_NAME'] == "employee") header("Location: home_employee.php");
         }
 ?>
@@ -51,14 +51,31 @@
 						</tr>
 						
 						<tr>
-						<td class="my_td"><a class="btn btn-light btn-block" href="all_system_employees.php">Colaboradores</a></td>
+						<td class="my_td"><a class="btn btn-light btn-block" href="all_system_employees_admin.php">Colaboradores</a></td>
 							<td><p class="my_td"><a class="btn btn-light btn-block" href="supervisors_departments.php">Subprocesos - Coordinadores</a></p></td>
 						</tr>
 						
 						<tr>
-						<td class="my_td"><a class="btn btn-light btn-block" href=#>Centros de Costo - Ordenes Estad&iacutesticas (inhabilitado)</a></td>
+						<td class="my_td"><a class="btn btn-light btn-block" href=#>Centros de Costo - Ordenes Estad&iacutesticas</a></td>
 							<td><p class="my_td"><a class="btn btn-light btn-block" href="cards_funds.php">Tarjetas - Fondos de Trabajo</a></p></td>
 						</tr>
+
+						<tr>
+							<td colspan=2 >
+								<p class="my_td h5">Sincronias con RH (OracleDB)</p>
+							</td>
+						</tr>
+
+						<tr>
+						<td class="my_td"><a class="btn btn-light btn-block" href="all_ORACLE_system_employees.php">Colaboradores (RH)</a></td>
+						<td><p class="my_td"><a class="btn btn-light btn-block" href=#>*</a></p></td>
+						</tr>
+
+						<tr>
+						<td class="my_td"><a class="btn btn-light btn-block" href="oracle_sync_new_employees.php">Sincronizar Nuevos Empleados</a></td>
+						<td><p class="my_td"><a class="btn btn-light btn-block" href="oracle_sync_jobs.php">Sincronizar Puestos</a></p></td>
+						</tr>
+
 					</table>
 			</div>
 		</div>

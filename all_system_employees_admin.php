@@ -10,8 +10,8 @@
     if ($_SESSION['LOGIN_MIPA'] == FALSE ){header("Location: index.php");}
     else
        {
-        if ($_SESSION['ROLE_NAME'] == "administrator") header("Location: home_admin.php");
-        //if ($_SESSION['ROLE_NAME'] == "supervisor") header("Location: home_supervisor.php");
+        //if ($_SESSION['ROLE_NAME'] == "administrator") header("Location: home_admin.php");
+        if ($_SESSION['ROLE_NAME'] == "supervisor") header("Location: home_supervisor.php");
         if ($_SESSION['ROLE_NAME'] == "employee") header("Location: home_employee.php");
         }
 
@@ -24,7 +24,7 @@
     $ONclause1="empleados.id=subprocesos.id";
     $whereClause="activo like 1";
 
-    $result = db_select_1_left_query($table1, $table2, $fields, $ONclause1, $whereClause)
+    $result = db_select_1_left_query($table1, $table2, $fields, $ONclause1, $whereClause);
 
 ?>
 
@@ -65,7 +65,7 @@
                 <table id="myTable" class="table table-borderless table-hover" style="width:100%">
                     <thead class="thead-dark">    
                         <tr>
-                            <th><small>C&eacutedula:</small></th>
+                        <th><small>C&eacutedula:</small></th>
                             <th><small>Nombre:</small></th>
                             <th><small>Subproceso:</small></th>
                             <th><small>Usuario de RED:</small></th>

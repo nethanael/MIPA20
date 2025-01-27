@@ -20,12 +20,14 @@
 
     $table1="empleados";
     $table2="fondo_tarjetas";
-    $fields="fondo_tarjetas.cedula, nombre_completo, tarjeta, fondo";
+    $table3="subprocesos";
+    $fields="fondo_tarjetas.cedula, subprocesos.nombre, nombre_completo, tarjeta, fondo";
     $ONclause1="fondo_tarjetas.cedula=empleados.cedula";
+    $ONclause2="subprocesos.id=empleados.id";
     $whereClause="activo like 1";
 
 
-    $result = db_select_1_inner_query($table1, $table2, $fields, $ONclause1, $whereClause);
+    $result = db_select_2_inner_query($table1, $table2, $table3, $fields, $ONclause1, $ONclause2, $whereClause);
 
 ?>
 
@@ -67,6 +69,7 @@
                     <thead class="thead-dark">    
                         <tr>
                             <th><small>C&eacutedula:</small></th>
+                            <th><small>Subproceso:</small></th>
                             <th><small>Nombre:</small></th>
                             <th><small># Tarjeta:</small></th>
                             <th><small>Fondo:</small></th>

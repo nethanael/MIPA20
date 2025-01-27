@@ -108,6 +108,14 @@
         return mysqli_query($conn, $query);                        //query to db
     };
 
+    function db_select_1_left_query($table1, $table2, $fields, $ONclause1, $whereClause){
+        include 'connection.php';
+        $query = "SELECT ".$fields." FROM ".$table1." LEFT JOIN ".$table2." ON ".$ONclause1." WHERE ".$whereClause;
+        //echo $query;
+        //echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
+        return mysqli_query($conn, $query);                        //query to db
+    };
+
     // select query with 1 inner join, 1 where clause and 1 order by ASC
 
     function db_select_1_inner_query_orderby($table1, $table2, $fields, $ONclause1, $whereClause, $orderBy){
@@ -123,6 +131,13 @@
         include 'connection.php';
         $query = "SELECT ".$fields." FROM ".$table1." INNER JOIN ".$table2." ON ".$ONclause1." INNER JOIN ".$table3." ON ".$ONclause2." WHERE ".$whereClause;
 		//echo $query;
+		return mysqli_query($conn, $query);                        //query to db
+    };
+
+    function db_select_2_left_query($table1, $table2, $table3, $fields, $ONclause1, $ONclause2, $whereClause){
+        include 'connection.php';
+        $query = "SELECT ".$fields." FROM ".$table1." LEFT JOIN ".$table2." ON ".$ONclause1." LEFT JOIN ".$table3." ON ".$ONclause2." WHERE ".$whereClause;
+		echo $query;
 		return mysqli_query($conn, $query);                        //query to db
     };
 
