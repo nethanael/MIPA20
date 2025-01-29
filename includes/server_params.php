@@ -7,7 +7,7 @@
     $DBpassword = 'T*cDY*K*NuM2Pa*+'; 
     
     //-> intranet real server
-    //$DBpassword = 'doGmaC.833';      
+    //$DBpassword = 'T*cDY*K*NuM2Pa*+';      
     $myDB = 'mipa';
 
 ?>

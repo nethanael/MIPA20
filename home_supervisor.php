@@ -40,9 +40,6 @@
 							<tr>
 								<th colspan="2"><p class="my_td h5">Men&uacute; Principal (Supervisor):</p></th>
 							</tr>
-							<tr>
-								<td colspan="2"><p class="my_td"><a class="btn btn-success btn-block" href="scripts/change_role.php">Cambiar a visor</a></p></td>
-							</tr>
 						</thead>
 						<tr>
 							<td colspan="2">
@@ -59,6 +56,11 @@
 						<td class="my_td"><a class="btn btn-light btn-block" href=#>Centros de Costo - Ordenes Estad&iacutesticas (inhabilitado)</a></td>
 							<td><p class="my_td"><a class="btn btn-light btn-block" href="cards_funds.php">Tarjetas - Fondos de Trabajo</a></p></td>
 						</tr>
+
+						<tr>
+						<td class="my_td"><a class="btn btn-light btn-block" href="csv_search_1.php">Busqueda por CSV</a></td>
+							<td><p class="my_td"><a class="btn btn-light btn-block" href="">*</a></p></td>
+						</tr>
 					</table>
 			</div>
 		</div>
@@ -66,7 +68,6 @@
 		<div class = "row justify-content-center my_row">
 			<div class="col-6 justify-content-center my_col bg-secondary text-white">
 				<p class="text-center font-weight-light">Sistema de control de colaboradores para el proceso de Sistemas Fijos e Inal&aacutenmbricos.</p>
-			
 			</div>
 		</div>
 
