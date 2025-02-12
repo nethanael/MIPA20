@@ -103,7 +103,7 @@
     function db_select_1_inner_query($table1, $table2, $fields, $ONclause1, $whereClause){
         include 'connection.php';
         $query = "SELECT ".$fields." FROM ".$table1." INNER JOIN ".$table2." ON ".$ONclause1." WHERE ".$whereClause;
-        //echo $query;
+        echo $query;
         //echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
         return mysqli_query($conn, $query);                        //query to db
     };
@@ -137,9 +137,30 @@
     function db_select_2_left_query($table1, $table2, $table3, $fields, $ONclause1, $ONclause2, $whereClause){
         include 'connection.php';
         $query = "SELECT ".$fields." FROM ".$table1." LEFT JOIN ".$table2." ON ".$ONclause1." LEFT JOIN ".$table3." ON ".$ONclause2." WHERE ".$whereClause;
-		echo $query;
+		//echo $query;
 		return mysqli_query($conn, $query);                        //query to db
     };
+
+    // Special query for MIPA 2.0
+
+    function db_select_special_alias_query(){
+        include 'connection.php';
+        $query = "SELECT e.cedula, e.nombre_completo, sp1.nombre AS subproceso_1, sp2.nombre AS subproceso_2,
+                        e2.nombre_completo AS coordinador, e.usuarioRed, e.usuarioSAP, e.puesto, e.cg 
+                  FROM empleados e
+                  LEFT JOIN subprocesos sp1 ON e.idJefeN = sp1.id
+                  LEFT JOIN subprocesos sp2 ON e.id = sp2.id
+                  LEFT JOIN empleados e2 ON e2.cedula = sp2.cedula_coordinador
+                  WHERE e.activo = 1";
+    
+        $result = mysqli_query($conn, $query);
+    
+        if (!$result) {
+            die("Error en la consulta: " . mysqli_error($conn)); // Muestra el error y detiene la ejecución
+        }
+    
+        return $result;
+    }
 
         // select query with 3 inner joins and 1 where clause
 

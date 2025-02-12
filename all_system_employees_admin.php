@@ -15,17 +15,11 @@
         if ($_SESSION['ROLE_NAME'] == "employee") header("Location: home_employee.php");
         }
 
-    $dept_code=$_SESSION['DEPT_CODE'];
-    include 'includes/functions.php';
-
-    $table1="empleados";
-    $table2="subprocesos";
-    $fields="cedula, nombre_completo, nombre, usuarioRed, usuarioSAP, puesto, cg";
-    $ONclause1="empleados.id=subprocesos.id";
-    $whereClause="activo like 1";
-
-    $result = db_select_1_left_query($table1, $table2, $fields, $ONclause1, $whereClause);
-
+        $dept_code=$_SESSION['DEPT_CODE'];
+        include 'includes/functions.php';
+    
+        $result = db_select_special_alias_query();
+        //var_dump($result->fetch_assoc());
 ?>
 
 <!DOCTYPE HTML>
@@ -65,9 +59,11 @@
                 <table id="myTable" class="table table-borderless table-hover" style="width:100%">
                     <thead class="thead-dark">    
                         <tr>
-                        <th><small>C&eacutedula:</small></th>
+                            <th><small>C&eacutedula:</small></th>
                             <th><small>Nombre:</small></th>
-                            <th><small>Subproceso:</small></th>
+                            <th><small>Subproceso 1:</small></th>
+                            <th><small>Subproceso 2:</small></th>
+                            <th><small>Coordinador Directo:</small></th>
                             <th><small>Usuario de RED:</small></th>
                             <th><small>Usuario de SAP:</small></th>
                             <th><small>Puesto:</small></th>
@@ -75,22 +71,25 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php                                                   //saca todos los valores de la base de datos y
-                                                                                // los hace filas
-                            while ($line =  $result->fetch_assoc()) 
-                                {
+                        <?php                                                   
+                            //saca todos los valores de la base de datos y
+                            // Verificar si hubo un error en la consulta
+                            if (!$result) {
+                                die("<tr><td colspan='100%'>Error en la consulta: " . mysqli_error($conn) . "</td></tr>");
+                            }
+
+                            // Verificar si hay datos
+                            if ($result->num_rows > 0) {
+                                while ($line = $result->fetch_assoc()) {
                                     echo "<tr>";
-                                    foreach ($line as $col_name => $col_value)
-                                    {
-                                        if ($col_name == 'task_code'){
-                                            echo "<td class='my_td'><a class='btn btn-primary' href=task_detail_employee.php?data=",$col_value,">$col_value</a></td>";
-                                        }
-                                        if ($col_name != 'task_code'){
-                                            echo "<td><small>$col_value</small></td>";
-                                        }
+                                    foreach ($line as $col_name => $col_value) {
+                                        echo "<td><small>$col_value</small></td>";
                                     }
                                     echo "</tr>";
                                 }
+                            } else {
+                                echo "<tr><td colspan='100%'>No hay datos disponibles</td></tr>";
+                            }
                         ?> 
                     </tbody>    
                 </table>

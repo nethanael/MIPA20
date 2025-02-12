@@ -4,9 +4,9 @@
 // PMP OCI8 module verification.
 
 if (function_exists('oci_connect')) {
-    //echo "OCI8 enable, now you can query ORACLE Databases";
+    echo "OCI8 enable, now you can query ORACLE Databases";
 } else {
-    //echo "OCI8 disbled, must check server config. 
+    echo "OCI8 disbled, must check server config."; 
     //install Oracle instant client 
 }
 
