@@ -48,17 +48,22 @@
 						</tr>
 						
 						<tr>
-						<td class="my_td"><a class="btn btn-light btn-block" href="all_system_employees.php">Colaboradores</a></td>
+							<td class="my_td"><a class="btn btn-light btn-block" href="all_system_employees.php">Colaboradores</a></td>
 							<td><p class="my_td"><a class="btn btn-light btn-block" href="supervisors_departments.php">Subprocesos - Coordinadores</a></p></td>
 						</tr>
 						
 						<tr>
-						<td class="my_td"><a class="btn btn-light btn-block" href=#>Centros de Costo - Ordenes Estad&iacutesticas (inhabilitado)</a></td>
+							<td class="my_td"><a class="btn btn-light btn-block" href=#>Centros de Costo - Ordenes Estad&iacutesticas (inhabilitado)</a></td>
 							<td><p class="my_td"><a class="btn btn-light btn-block" href="cards_funds.php">Tarjetas - Fondos de Trabajo</a></p></td>
 						</tr>
 
 						<tr>
-						<td class="my_td"><a class="btn btn-light btn-block" href="csv_search_1.php">Busqueda por CSV</a></td>
+							<td class="my_td"><a class="btn btn-light btn-block" href="systems.php">Sistemas</a></td>
+							<td><p class="my_td"><a class="btn btn-light btn-block" href=#>*</a></p></td>
+						</tr>
+
+						<tr>
+							<td class="my_td"><a class="btn btn-light btn-block" href="csv_search_1.php">Busqueda por CSV</a></td>
 							<td><p class="my_td"><a class="btn btn-light btn-block" href="">*</a></p></td>
 						</tr>
 					</table>

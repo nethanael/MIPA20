@@ -103,7 +103,7 @@
     function db_select_1_inner_query($table1, $table2, $fields, $ONclause1, $whereClause){
         include 'connection.php';
         $query = "SELECT ".$fields." FROM ".$table1." INNER JOIN ".$table2." ON ".$ONclause1." WHERE ".$whereClause;
-        echo $query;
+        //echo $query;
         //echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
         return mysqli_query($conn, $query);                        //query to db
     };
