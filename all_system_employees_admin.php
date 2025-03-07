@@ -63,7 +63,7 @@
                             <th><small>Nombre:</small></th>
                             <th><small>Subproceso 1:</small></th>
                             <th><small>Subproceso 2:</small></th>
-                            <th><small>Coordinador Directo:</small></th>
+                            <th><small>Coordinador Subproceso 2:</small></th>
                             <th><small>Usuario de RED:</small></th>
                             <th><small>Usuario de SAP:</small></th>
                             <th><small>Puesto:</small></th>
