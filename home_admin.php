@@ -36,12 +36,15 @@
 			<div class = "col-6 my_col">
 				<!-- (row_!Centro!) -->
 					<table class="table">
-						<thead class="thead-light">
+						<thead  class="table-info">
 							<tr>
 								<th colspan="2"><p class="my_td h5">Men&uacute; Principal (Supervisor):</p></th>
 							</tr>
 							<tr>
-								<td colspan="2"><p class="my_td"><a class="btn btn-success btn-block" href="scripts/change_role.php">Cambiar a visor</a></p></td>
+								<td colspan="2"><p class="my_td"><a class="btn btn-success btn-block" href="scripts/change_role.php">Cambiar a N2</a></p></td>
+							</tr>
+							<tr>
+								<td colspan="2"><p class="my_td"><a class="btn btn-success btn-block" href="scripts/change_role_2.php">Cambiar a Staff</a></p></td>
 							</tr>
 						</thead>
 						<tr>
@@ -52,12 +55,7 @@
 						
 						<tr>
 						<td class="my_td"><a class="btn btn-light btn-block" href="all_system_employees_admin.php">Colaboradores</a></td>
-							<td><p class="my_td"><a class="btn btn-light btn-block" href="supervisors_departments.php">Subprocesos - Coordinadores</a></p></td>
-						</tr>
-						
-						<tr>
-						<td class="my_td"><a class="btn btn-light btn-block" href=#>Centros de Costo - Ordenes Estad&iacutesticas</a></td>
-							<td><p class="my_td"><a class="btn btn-light btn-block" href="cards_funds.php">Tarjetas - Fondos de Trabajo</a></p></td>
+							<td><p class="my_td"><a class="btn btn-light btn-block" href=#>*	</a></p></td>
 						</tr>
 
 						<tr>

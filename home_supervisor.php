@@ -36,7 +36,7 @@
 			<div class = "col-6 my_col">
 				<!-- (row_!Centro!) -->
 					<table class="table">
-						<thead class="thead-light">
+						<thead  class="table-primary">
 							<tr>
 								<th colspan="2"><p class="my_td h5">Men&uacute; Principal (Supervisor):</p></th>
 							</tr>
@@ -48,23 +48,18 @@
 						</tr>
 						
 						<tr>
-							<td class="my_td"><a class="btn btn-light btn-block" href="all_system_employees.php">Colaboradores</a></td>
-							<td><p class="my_td"><a class="btn btn-light btn-block" href="supervisors_departments.php">Subprocesos - Coordinadores</a></p></td>
+							<td class="my_td"><a class="btn btn-light btn-block" href="all_system_employees_supervisor.php">Colaboradores</a></td>
+							<td><p class="my_td"><a class="btn btn-light btn-block" href="supervisors_departments_supervisor.php">Subprocesos - Coordinadores</a></p></td>
 						</tr>
 						
 						<tr>
 							<td class="my_td"><a class="btn btn-light btn-block" href=#>Centros de Costo - Ordenes Estad&iacutesticas (inhabilitado)</a></td>
-							<td><p class="my_td"><a class="btn btn-light btn-block" href="cards_funds.php">Tarjetas - Fondos de Trabajo</a></p></td>
+							<td><p class="my_td"><a class="btn btn-light btn-block" href="cards_funds_supervisor.php">Tarjetas - Fondos de Trabajo</a></p></td>
 						</tr>
 
 						<tr>
-							<td class="my_td"><a class="btn btn-light btn-block" href="systems.php">Sistemas</a></td>
-							<td><p class="my_td"><a class="btn btn-light btn-block" href=#>*</a></p></td>
-						</tr>
-
-						<tr>
+							<td class="my_td"><a class="btn btn-light btn-block" href="systems_supervisor.php">Sistemas</a></td>
 							<td class="my_td"><a class="btn btn-light btn-block" href="csv_search_1.php">Busqueda por CSV</a></td>
-							<td><p class="my_td"><a class="btn btn-light btn-block" href="">*</a></p></td>
 						</tr>
 					</table>
 			</div>

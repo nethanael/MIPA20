@@ -37,22 +37,22 @@
 			<div class = "col-6 my_col">
 				<!-- (row_!Centro!) -->
 				<table class="table">
-					<thead class="thead-light">
+					<thead  class="table-success">
 						<tr>
 							<th class="my_td h5" colspan="2">Menu Principal de <?php echo $_SESSION['NAME'];?>:</th>
 						</tr>
 					</thead>
 					<tr>
-						<td class="my_td"><a class="btn btn-light btn-block" href=#>disponible</a></td>
-						<td class="my_td"><a class="btn btn-light btn-block" href=#>disponible</a></td>
-					</tr>
+							<td class="my_td"><a class="btn btn-light btn-block" href="all_system_employees_employee.php">Colaboradores</a></td>
+							<td><p class="my_td"><a class="btn btn-light btn-block" href="supervisors_departments_employee.php">Subprocesos - Coordinadores</a></p></td>
+						</tr>
 				</table>
 				</div>
 			</div>
 
-		<div class = "row justify-content-center my_row">
-			<div class = "col-6 my_col">
-				<div class="p-3 mb-2 bg-success text-white">Mensaje Importante: <?php echo $_SESSION['INBOX_MSG'];?></div>
+			<div class = "row justify-content-center my_row">
+			<div class="col-6 justify-content-center my_col bg-secondary text-white">
+				<p class="text-center font-weight-light">Sistema de control de colaboradores para el proceso de Sistemas Fijos e Inal&aacutenmbricos.</p>
 			</div>
 		</div>
 

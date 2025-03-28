@@ -2,9 +2,9 @@
 
     session_start();
 
-	$_SESSION['ROLE_NAME'] = "employee";
-	$_SESSION['ROLE_CODE'] = 3;
-    $_SESSION['ROLE_DESCRIPTION'] = "Nivel 2 del proceso.";
+	$_SESSION['ROLE_NAME'] = "supervisor";
+	$_SESSION['ROLE_CODE'] = 2;
+    $_SESSION['ROLE_DESCRIPTION'] = "Staff del proceso.";
 
 	//empty all form temporary sessions variables
 
