@@ -66,6 +66,7 @@
                             <th><small>Subproceso 2:</small></th>
                             <th><small>Coordinador Subproceso 2:</small></th>
                             <th><small>Usuario de RED:</small></th>
+                            <th><small>Email:</small></th>
                             <th><small>Usuario de SAP:</small></th>
                             <th><small>Puesto:</small></th>
                             <th><small>Centro Gesti&oacuten:</small></th>

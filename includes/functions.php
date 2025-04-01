@@ -146,7 +146,7 @@
     function db_select_special_alias_query(){
         include 'connection.php';
         $query = "SELECT e.cedula, e.nombre_completo, sp1.nombre AS subproceso_1, sp2.nombre AS subproceso_2,
-                        e2.nombre_completo AS coordinador, e.usuarioRed, e.usuarioSAP, e.puesto, e.cg 
+                        e2.nombre_completo AS coordinador, e.usuarioRed, e.email, e.usuarioSAP, e.puesto, e.cg 
                   FROM empleados e
                   LEFT JOIN subprocesos sp1 ON e.idJefeN = sp1.id
                   LEFT JOIN subprocesos sp2 ON e.id = sp2.id
