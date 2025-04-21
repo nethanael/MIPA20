@@ -65,6 +65,7 @@
                             <th><small>Subproceso 1:</small></th>
                             <th><small>Subproceso 2:</small></th>
                             <th><small>Coordinador Subproceso 2:</small></th>
+                            <th><small>Grupo de Gestión:</small></th>
                             <th><small>Usuario de RED:</small></th>
                             <th><small>Email:</small></th>
                             <th><small>Usuario de SAP:</small></th>
