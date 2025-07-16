@@ -53,7 +53,7 @@
 						</tr>
 						
 						<tr>
-							<td class="my_td"><a class="btn btn-light btn-block" href=#>Centros de Costo - Ordenes Estad&iacutesticas (inhabilitado)</a></td>
+							<td class="my_td"><a class="btn btn-light btn-block" href="vehicles_supervisor.php">Veh&iacuteculos</a></td>
 							<td><p class="my_td"><a class="btn btn-light btn-block" href="cards_funds_supervisor.php">Tarjetas - Fondos de Trabajo</a></p></td>
 						</tr>
 

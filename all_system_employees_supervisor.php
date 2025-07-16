@@ -81,19 +81,34 @@
                                 die("<tr><td colspan='100%'>Error en la consulta: " . mysqli_error($conn) . "</td></tr>");
                             }
 
-                            // Verificar si hay datos
+                            // Verifica si hay resultados
                             if ($result->num_rows > 0) {
+                                // Recorre cada fila del resultado
                                 while ($line = $result->fetch_assoc()) {
                                     echo "<tr>";
+
                                     foreach ($line as $col_name => $col_value) {
-                                        echo "<td><small>$col_value</small></td>";
+                                        // Escapa el valor para evitar XSS
+                                        $safe_value = htmlspecialchars($col_value, ENT_QUOTES, 'UTF-8');
+
+                                        switch ($col_name) {
+
+                                            case 'cedula':
+                                                echo "<td><a class='btn btn-warning' href='employee_details.php?data={$safe_value}'>{$safe_value}</a></td>";
+                                                break;
+
+                                            default:
+                                                echo "<td><small>{$safe_value}</small></td>";
+                                                break;
+                                        }
                                     }
+
                                     echo "</tr>";
                                 }
                             } else {
                                 echo "<tr><td colspan='100%'>No hay datos disponibles</td></tr>";
                             }
-                        ?> 
+                        ?>
                     </tbody>    
                 </table>
             </div>
@@ -114,7 +129,7 @@
             paging: true,
             searching: true,
             ordering:false,
-            pageLength: 20, // Número de registros por página
+            pageLength: 200, // Número de registros por página
             language: {
                 url: 'https://cdn.datatables.net/plug-ins/1.13.6/i18n/Spanish.json' // Para traducir al español
             }

@@ -59,7 +59,7 @@
 		<div class = "row justify-content-center my_row">
 			<div class = "col-12 my_col">
 					<!--(row_!Titulo!)-->
-					<p class="text-center">Subprocesos y Coordinadores SFI:</p>
+					<p class="text-center">Tarjetas SFI:</p>
 			</div>
 		</div>
 

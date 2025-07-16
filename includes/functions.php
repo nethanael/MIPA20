@@ -79,6 +79,15 @@
 		return mysqli_query($conn, $query);                        //inserts to db
     };
 
+    // simple update query with where clause
+
+    function db_update_query_1_whereClause($table,$fields,$whereClause){
+        include 'connection.php';
+        $query = "UPDATE $table SET $fields WHERE $whereClause";
+		//echo $query;
+		return mysqli_query($conn, $query);                        //inserts to db
+    };
+
      // simple select query with where clause (Use to iterate and build tables)
 
      function db_select_simple($table1, $fields, $whereClause){
@@ -322,8 +331,6 @@ function yearFix($month)
         return $oracle_data;
 
     };
-
-
 
 ?>
 
