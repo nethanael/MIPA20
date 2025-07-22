@@ -21,18 +21,23 @@
     $table1="vehiculos";
     $table2="empleados";
     $table3="subprocesos";
+    $table4="subprocesos";
 
-    $fields="vehiculos.placa, vehiculos.numero_SAP, vehiculos.tipo, vehiculos.ano, vehiculos.asignado_a, 
-    empleados.nombre_completo, subprocesos.nombre, vehiculos.estado_extintor, vehiculos.extintor_cod_SAP, 
-    vehiculos.numero_vale, vehiculos.observaciones";
+    // como se repite la tabla 3 y 4 se deben usar alias tanto en los nombres de los campos como en el onclause3
+
+    $fields="vehiculos.placa, vehiculos.numero_SAP, vehiculos.CMA, vehiculos.tipo, vehiculos.ano, vehiculos.asignado_a, 
+    empleados.nombre_completo, table4.nombre nombre_1, subprocesos.nombre nombre_2, 
+    vehiculos.estado_extintor, vehiculos.extintor_cod_SAP, vehiculos.numero_vale, vehiculos.prioridad_sustitucion,
+    vehiculos.observaciones";
 
     $ONclause1="vehiculos.asignado_a=empleados.cedula";
     $ONclause2="subprocesos.id=empleados.id";
+    $ONclause3="table4.id=empleados.idJefeN";
     
     $whereClause="vehiculos.activo like 1";
 
 
-    $result = db_select_2_inner_query($table1, $table2, $table3, $fields, $ONclause1, $ONclause2, $whereClause);
+    $result = db_select_3_inner_query($table1, $table2, $table3, $table4, $fields, $ONclause1, $ONclause2, $ONclause3, $whereClause);
 
 ?>
 
@@ -70,21 +75,26 @@
 
 			<div class = "table-responsive">
 				<!-- (row_!Centro!) -->
-                <table id="myTable" class="table table-borderless table-hover" style="width:100%">
+                <table id="myTable" class="table table-sm table-hover" style="width:100%">
                     <thead class="thead-dark">    
                         <tr>
                             <th><small>Placa:</small></th>
                             <th><small>C&oacutedigo SAP:</small></th>
+                            <th><small>CMA:</small></th>
                             <th><small>Tipo:</small></th>
                             <th><small>A&ntildeo:</small></th>
                             <th><small>Asignado a:</small></th>
                             <th><small>Nombre:</small></th>
-                            <th><small>Subproceso:</small></th>
+                            <th><small>Subproceso 1:</small></th>
+                            <th><small>Subproceso 2:</small></th>
+                            <!-- <th><small>Sustituir:</small></th> -->
+                            <!-- <th><small>Prioridad:</small></th> -->
                             <th><small>Estado Extintor:</small></th>
                             <th><small>Cod. SAP:</small></th>
                             <th><small># Vale:</small></th>
                             <!-- <th><small>Sustituci&oacuten:</small></th> -->
                             <!-- <th><small>Prioridad:</small></th> -->
+                             <th><small>Prioridad Sustituci&oacuten:</small></th>
                             <th><small>Observaciones:</small></th>
                             <th><small>ETM info:</small></th>
                         </tr>
@@ -108,20 +118,20 @@
 
                                 switch ($col_name) {
                                     case 'placa':
-                                        echo "<td class='my_td'><a class='btn btn-primary' href='vehicle_details.php?data={$safe_value}'>{$safe_value}</a></td>";
+                                        echo "<td class='my_td'><a class='btn btn-primary' style='font-size: 10px;' href='vehicle_details.php?data={$safe_value}'>{$safe_value}</a></td>";
                                         $placa_temp = $safe_value;
                                         break;
 
                                     case 'asignado_a':
-                                        echo "<td><a class='btn btn-warning' href='employee_details.php?data={$safe_value}'>{$safe_value}</a></td>";
+                                        echo "<td><a class='btn btn-warning' style='font-size: 10px; href='employee_details.php?data={$safe_value}'>{$safe_value}</a></td>";
                                         break;
 
                                     default:
-                                        echo "<td><small>{$safe_value}</small></td>";
+                                        echo "<td><small style='font-size: 10px;'>{$safe_value}</small></td>";
                                         break;
                                 }
                             }
-                            echo "<td class='my_td'><a class='btn btn-primary' href='vehicle_etm_details.php?data={$placa_temp}'>Consultar ETM</a></td>";
+                            echo "<td class='my_td'><a class='btn btn-primary' style='font-size: 10px;' href='vehicle_etm_details.php?data={$placa_temp}'>Consultar ETM</a></td>";
                             echo "</tr>";
                         }
                     } else {
@@ -148,7 +158,7 @@
             paging: true,
             searching: true,
             ordering:false,
-            pageLength: 20, // Número de registros por página
+            pageLength: 100, // Número de registros por página
             language: {
                 url: 'https://cdn.datatables.net/plug-ins/1.13.6/i18n/Spanish.json' // Para traducir al español
             }

@@ -173,10 +173,11 @@
     }
 
         // select query with 3 inner joins and 1 where clause
+        // table4 uses an alias so u can repeat that table
 
     function db_select_3_inner_query($table1, $table2, $table3, $table4, $fields, $ONclause1, $ONclause2, $ONclause3, $whereClause){
         include 'connection.php';
-        $query = "SELECT ".$fields." FROM ".$table1." INNER JOIN ".$table2." ON ".$ONclause1." INNER JOIN ".$table3." ON ".$ONclause2." INNER JOIN ".$table4." ON ".$ONclause3." WHERE ".$whereClause;
+        $query = "SELECT ".$fields." FROM ".$table1." INNER JOIN ".$table2." ON ".$ONclause1." INNER JOIN ".$table3." ON ".$ONclause2." INNER JOIN ".$table4." table4 "." ON ".$ONclause3." WHERE ".$whereClause;
         //echo $query;
         return mysqli_query($conn, $query);                        //query to db
     };

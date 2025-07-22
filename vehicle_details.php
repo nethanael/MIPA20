@@ -147,10 +147,10 @@
                         
                         <label for="lname">Sustituir?</label><br>
                         <small class="form-text text-muted">Ingrese <strong>no</strong> para no sustituci&oacute;n o <strong>si</strong> para marcar como sustituible.</small><br>
-                        <input type="text" class="form-control" id="para_sustituir" name="para_sustituir" value="<?php echo $para_sustituir;?>"><br>
+                        <input type="text" class="form-control" id="para_sustituir" name="para_sustituir" value="<?php echo $para_sustituir;?>"readonly><br>
                         
                         <label for="lname">Prioridad Sustituc&iacuteon:</label><br>
-                        <input type="text" class="form-control" id="prioridad_sustitucion" name="prioridad_sustitucion" value="<?php echo $prioridad_sustitucion;?>"><br>
+                        <input type="text" class="form-control" id="prioridad_sustitucion" name="prioridad_sustitucion" value="<?php echo $prioridad_sustitucion;?>"readonly><br>
 
                         <label for="lname">Activo:</label><br>
                         <small class="form-text text-muted">Ingrese <strong>0</strong> para inactivo o <strong>1</strong> para activo.</small><br>

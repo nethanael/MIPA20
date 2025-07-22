@@ -98,7 +98,7 @@
                                                 break;
 
                                             default:
-                                                echo "<td><small>{$safe_value}</small></td>";
+                                                echo "<td><small style='font-size: 10px;'>{$safe_value}</small></td>";
                                                 break;
                                         }
                                     }
